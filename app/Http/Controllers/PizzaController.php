@@ -45,6 +45,7 @@ class PizzaController extends Controller
         // error_log($pizza->name);
        // return $pizza;
         //$pizza->delete();
-        return "delete " + $id;
+        return $id;
     }
+    
 }

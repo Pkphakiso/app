@@ -15,6 +15,7 @@
     <input type="text" id="price" name="price" placeholder="Price" /><br><br>
 
     <label>Topping:</label><br>
+    
     <input type="checkbox" name="topping[]" value="one" />One<br><br>
     <input type="checkbox" name="topping[]" value="two" />Two<br><br>
     <input type="checkbox" name="topping[]" value="three" />Three<br><br>

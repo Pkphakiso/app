@@ -13,9 +13,11 @@
             <li>Is - {{ $topping }}</li>
         @endforeach
     </ul> 
-    <form action="/pazza/{{$pizza->id}}" method="POST">
+    <!-- <form action="/pazza///$pizza->id}}" method="post"> -->
+    <form action="{{route("pizza.destroy", $pizza->id)}}" method="post">
+
         @csrf
-        @method("delete") <!-- this method overide the post method in the form method ,because the browser doesnt understand the delete -->
+        @method("DELETE") <!-- this method overide the post method in the form method ,because the browser doesnt understand the delete -->
         <button>delete</button>
     </form>
 

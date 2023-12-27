@@ -13,3 +13,4 @@ class Pizza extends Model
     "topping" => "array",
    ];
 }
+

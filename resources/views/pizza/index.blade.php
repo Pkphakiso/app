@@ -10,4 +10,4 @@
         @endforeach
     </ul>    
     <p>{{ session("success")}}</p> 
-@endsection
+@endsection 

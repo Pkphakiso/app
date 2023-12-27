@@ -20,8 +20,12 @@ Route::get('/app', function () {
 });
 
 Route::get('/pizza', [PizzaController::class , 'index' ] )->name('test');
+
 Route::get('/pizza/create', [PizzaController::class , 'create' ] );
-Route::get('/pizza/{id}', [PizzaController::class , 'show' ] );
+
 Route::post("/pizza",[PizzaController::class , "store"]);
 
-Route::delete("/pizza/{id}", [PizzaController::class ,"destroy"]);
+Route::get('/pizza/{id}', [PizzaController::class , 'show' ] );
+
+
+Route::delete("/pizza/{id}", [PizzaController::class ,"destroy"])->name("pizza.destroy");
