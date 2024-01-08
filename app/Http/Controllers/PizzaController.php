@@ -41,11 +41,11 @@ class PizzaController extends Controller
     }
     public function destroy($id){
 
-        // $pizza = Pizza::find($id);
-        // error_log($pizza->name);
-       // return $pizza;
-        //$pizza->delete();
-        return $id;
+        $pizza = Pizza::find($id);
+       // error_log($pizza->name);
+        $pizza->delete();
+       return redirect("/pizza");
+       
     }
     
 }

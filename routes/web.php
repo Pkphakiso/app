@@ -19,6 +19,7 @@ Route::get('/app', function () {
     return view('contents.welcome');
 });
 
+
 Route::get('/pizza', [PizzaController::class , 'index' ] )->name('test');
 
 Route::get('/pizza/create', [PizzaController::class , 'create' ] );
