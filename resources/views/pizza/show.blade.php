@@ -20,6 +20,12 @@
         @method("DELETE") <!-- this method overide the post method in the form method ,because the browser doesnt understand the delete -->
         <button>delete</button>
     </form>
+    <form action="{{route("pizza.edit", $pizza->id)}}" method="post">
+
+        @csrf
+        @method("PUT") <!-- this method overide the post method in the form method ,because the browser doesnt understand the delete -->
+        <button>Edit</button>
+    </form>
 
     <a href="/pizza"> -> Back to Pizzas</a>
     

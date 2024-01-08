@@ -47,5 +47,9 @@ class PizzaController extends Controller
        return redirect("/pizza");
        
     }
+
+    public function edit(){
+        return "edit item";
+    }
     
 }
