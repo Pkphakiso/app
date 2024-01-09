@@ -22,12 +22,13 @@ Route::get('/app', function () {
 
 Route::get('/pizza', [PizzaController::class , 'index' ] )->name('test');
 
-Route::get('/pizza/create', [PizzaController::class , 'create' ] );
+Route::get('/pizza/create', [PizzaController::class , 'create']);
 
-Route::post("/pizza",[PizzaController::class , "store"]);
+Route::post("/pizza", [PizzaController::class , "store"]);
 
-Route::get('/pizza/{id}', [PizzaController::class , 'show' ] );
+Route::get('/pizza/{id}', [PizzaController::class , 'show']);
 
 Route::delete("/pizza/{id}", [PizzaController::class ,"destroy"])->name("pizza.destroy");
+
 Route::get("/pizza/{id}/edit", [PizzaController::class ,"edit"]);
 Route::patch("/pizza/{id}/edit", [PizzaController::class ,"edit"])->name("pizza.edit");

@@ -50,7 +50,6 @@ class PizzaController extends Controller
 
     public function edit($id){
 
-           // return "edited " . $id;
          $pizzas = Pizza::find($id);
          //error_log($pizzas);
          return view('pizza.edit')->with('pizzas', $pizzas);
