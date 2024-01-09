@@ -28,6 +28,6 @@ Route::post("/pizza",[PizzaController::class , "store"]);
 
 Route::get('/pizza/{id}', [PizzaController::class , 'show' ] );
 
-
 Route::delete("/pizza/{id}", [PizzaController::class ,"destroy"])->name("pizza.destroy");
-Route::put("/pizza/{id}", [PizzaController::class ,"edit"])->name("pizza.edit");
+Route::get("/pizza/{id}/edit", [PizzaController::class ,"edit"]);
+Route::patch("/pizza/{id}/edit", [PizzaController::class ,"edit"])->name("pizza.edit");
