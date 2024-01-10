@@ -4,11 +4,10 @@
 
 @section("content")
 
-    <h1>SHOW a product details </h1>
+    <h1>SHOW a Pizza </h1>
     <p>Name - {{ $pizza->name }}</p>
-    <p>Price - R {{ $pizza->price}}</p><br/>
-    
-    <p>Colours:</p>
+    <p>Price - R {{ $pizza->price}}</p>
+    <p>Extra topping:</p>
     <ul>
         @foreach ($pizza->topping as $topping)
             <li>Is - {{ $topping }}</li>
@@ -21,9 +20,11 @@
         @method("DELETE") <!-- this method overide the post method in the form method ,because the browser doesnt understand the delete -->
         <button>delete</button>
     </form>
+ 
+
     
-    <!-- this method overide the post method in the form method ,because the browser doesnt understand the delete -->
-    <a href="/pizza/{{$pizza->id}}/edit"> Edit </a><button></button>
+         <!-- this method overide the post method in the form method ,because the browser doesnt understand the delete -->
+         <a href="/pizza/{{$pizza->id}}/edit"> Edit </a><button></button>
     
     <br />
     <a href="/pizza"> -> Back to Pizzas</a>

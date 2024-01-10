@@ -33,7 +33,7 @@ class PizzaController extends Controller
         $pizza = new Pizza();
         $pizza->name = request("name");
         $pizza->price = request("price");
-        $pizza->topping = request("topping");
+        $pizza->topping = request("colors");
         $pizza->save();
         //error_log(request("topping")); // this error-log works for string not arrays 
         //return request("topping"); //
@@ -57,10 +57,10 @@ class PizzaController extends Controller
 
     public function update( Request $request, $id ) {
 
-        $pizza = Pizza::find($id);
+        $pizza = Pizza::find( $id );
         $pizza->name = $request->input("name");
         $pizza->price = $request->input("price");
-        $pizza->topping = $request->input("topping");
+        $pizza->topping = $request->input("colors");
         $pizza->update();
 
         return redirect("/pizza")->with("success","Data updated..");

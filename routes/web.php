@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PizzaController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/app', function () {
-    return view('contents.welcome');
+Route::get('/register', function () {
+    return view('contents.register');
 });
 
 
@@ -32,3 +33,5 @@ Route::delete("/pizza/{id}", [PizzaController::class ,"destroy"])->name("pizza.d
 
 Route::get("/pizza/{id}/edit", [PizzaController::class ,"edit"]);
 Route::put("/pizza/{id}/update", [PizzaController::class ,"update"])->name("pizza.update");
+
+Route::resource("subjects", SubjectController::class);
