@@ -6,9 +6,9 @@
 
 <h2>Edit Item</h2><br>
 
-<form action="{{route("pizza.edit", $pizzas->id)}}" method="post">  
+<form action="{{route("pizza.update", $pizzas->id)}}" method="post">  
      @csrf   
-     @method("PATCH")
+     @method("PUT")
     <label for="name">Pizza name:</label><br>
     <input type="text" id="name" name="name" placeholder="pizza name" value="{{ $pizzas->name }}" /><br>
 
@@ -21,7 +21,7 @@
     <input type="checkbox" name="topping[]" value="two" />Two<br>
     <input type="checkbox" name="topping[]" value="three" />Three<br><br>
 
-    <input type="submit" value="Edit Item">
+    <input type="submit" value="Update Item">
 </form> 
     
 @endsection

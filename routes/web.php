@@ -31,4 +31,4 @@ Route::get('/pizza/{id}', [PizzaController::class , 'show']);
 Route::delete("/pizza/{id}", [PizzaController::class ,"destroy"])->name("pizza.destroy");
 
 Route::get("/pizza/{id}/edit", [PizzaController::class ,"edit"]);
-Route::patch("/pizza/{id}/edit", [PizzaController::class ,"edit"])->name("pizza.edit");
+Route::put("/pizza/{id}/update", [PizzaController::class ,"update"])->name("pizza.update");

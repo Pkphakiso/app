@@ -20,7 +20,7 @@ class PizzaController extends Controller
 
     public function show($id){
         
-        $pizza = Pizza::find($id);
+        $pizza = Pizza::find( $id );
         return  view("pizza.show", ["pizza" => $pizza]);
     }
 
@@ -39,9 +39,9 @@ class PizzaController extends Controller
         //return request("topping"); //
         return redirect("/pizza")->with("success","pizza added"); //session message
     }
-    public function destroy($id){
+    public function destroy( $id ){
 
-        $pizza = Pizza::find($id);
+        $pizza = Pizza::find( $id );
        // error_log($pizza->name);
         $pizza->delete();
        return redirect("/pizza");
@@ -50,9 +50,21 @@ class PizzaController extends Controller
 
     public function edit($id){
 
-         $pizzas = Pizza::find($id);
+         $pizzas = Pizza::find( $id );
          //error_log($pizzas);
-         return view('pizza.edit')->with('pizzas', $pizzas);
+         return view('pizza.edit', compact("pizzas"));
+    }
+
+    public function update( Request $request, $id ) {
+
+        $pizza = Pizza::find($id);
+        $pizza->name = $request->input("name");
+        $pizza->price = $request->input("price");
+        $pizza->topping = $request->input("topping");
+        $pizza->update();
+
+        return redirect("/pizza")->with("success","Data updated..");
+        //return "update record " . $id ;
     }
     
 }
